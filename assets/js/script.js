@@ -1,10 +1,10 @@
-async function desafioAsincrono() {
-  const Albums = await fetch("https://jsonplaceholder.typicode.com/albums");
+async function desafioPost() {
+  const posts = await fetch("https://jsonplaceholder.typicode.com/posts");
 
   try {
-    const respuesta = await Albums.json();
+    const respuesta = await posts.json();
     respuesta.forEach((element) => {
-      if (element.id < 21) {
+      if (element.id < 21) { //aca se debe cambiar el formato por que se va a eniar al HTML como unalista usando vineta
         console.log(`ID: ${element.id} , Titulo: ${element.title}`);
       }
     });
@@ -12,8 +12,8 @@ async function desafioAsincrono() {
     console.log(error);
   }
 }
-desafioAsincrono();
-
+desafioPost();
+/* 
 function mensaje() {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -26,4 +26,4 @@ async function mostrarMensaje(promesa) {
   const resultado = await promesa;
   console.log(resultado);
 }
-mostrarMensaje(mensaje());
+mostrarMensaje(mensaje()); */
